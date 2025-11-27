@@ -36,8 +36,6 @@ class RegisteredUserController extends Controller
            
         ]);
         
-        
-
         return redirect()->route('user.login')->with('success', 'User registered successfully!');
     
     }

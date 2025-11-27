@@ -1,30 +1,78 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+<html lang="en">
 
-        <title>{{ config('app.name', 'Hotel') }}</title>
+<head>
+     <!-- Title Meta -->
+     <meta charset="utf-8" />
+     <title>Sign In 2 | Rasket - Responsive Admin Dashboard Template</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="description" content="A fully responsive premium admin dashboard template" />
+     <meta name="author" content="Techzaa" />
+     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+     <!-- App favicon -->
+     <link rel="shortcut icon" href="{{asset('assets/admin/assets/images/favicon.ico')}}">
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body class="font-sans text-gray-900 antialiased">
-        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
-            <div>
-                <a href="/">
-                    <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-                </a>
-            </div>
+     <!-- Vendor css (Require in all Page) -->
+     <link href="{{asset('assets/admin/assets/css/vendor.min.css')}}" rel="stylesheet" type="text/css" />
 
-            <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
-                {{ $slot }}
-            </div>
-        </div>
-    </body>
+     <!-- Icons css (Require in all Page) -->
+     <link href="{{asset('assets/admin/assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
+
+     <!-- App css (Require in all Page) -->
+     <link href="{{asset('assets/admin/assets/css/app.min.css')}}" rel="stylesheet" type="text/css" />
+
+     <!-- Theme Config js (Require in all Page) -->
+     <script src="{{asset('assets/admin/assets/js/config.min.js')}}"></script>
+
+</head>
+
+<body class="authentication-bg">
+    <div class="account-pages pt-2 pt-sm-5 pb-4 pb-sm-5">
+        <div class="container">
+             <div class="row justify-content-center">
+                  <div class="col-xl-5">
+                       <div class="card auth-card">
+                            <div class="card-body px-3 py-5">
+                                <div class="mx-auto mb-4 text-center auth-logo">
+                                    <a href="index.html" class="logo-dark">
+                                        <img src="{{asset('assets/admin/assets/images/logo-sm.png')}}" height="30" class="me-1" alt="logo sm">
+                                        <img src="{{asset('assets/admin/assets/images/logo-dark.png')}}" height="24" alt="logo dark">
+                                    </a>
+    
+                                    <a href="index.html" class="logo-light">
+                                        <img src="{{asset('assets/admin/assets/images/logo-sm.png')}}" height="30" class="me-1" alt="logo sm">
+                                        <img src="{{asset('assets/admin/assets/images/logo-light.png')}}" height="24" alt="logo light">
+                                    </a>
+                                </div>
+
+
+                                @yield('content')
+
+                                <p class="mt-3 fw-semibold no-span">OR sign with</p>
+
+                                <div class="text-center">
+                                     <a href="javascript:void(0);" class="btn btn-light shadow-none"><i class='bx bxl-google fs-20'></i></a>
+                                     <a href="javascript:void(0);" class="btn btn-light shadow-none"><i class='bx bxl-facebook fs-20'></i></a>
+                                     <a href="javascript:void(0);" class="btn btn-light shadow-none"><i class='bx bxl-github fs-20'></i></a>
+                                </div>
+                           </div> <!-- end col -->
+                      </div> <!-- end card-body -->
+                 </div> <!-- end card -->>
+
+                   @stack('content')
+                </div> <!-- end col -->
+         </div> <!-- end row -->
+    </div>
+</div>
+    
+    <!-- Vendor Javascript (Require in all Page) -->
+    <script src="{{asset('assets/admin/assets/js/vendor.js')}}"></script>
+
+    <!-- App Javascript (Require in all Page) -->
+    <script src="{{asset('assets/admin/assets/js/app.js')}}"></script>
+    
+    
+</body>
+
 </html>

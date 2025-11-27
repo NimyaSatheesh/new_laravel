@@ -1,36 +1,45 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+<html lang="en">
 
-        <title>{{ config('app.name', 'Hotel') }}</title>
+<head>
+     <!-- Title Meta -->
+     <meta charset="utf-8" />
+     <title>Sign In 2 | Rasket - Responsive Admin Dashboard Template</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="description" content="A fully responsive premium admin dashboard template" />
+     <meta name="author" content="Techzaa" />
+     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+     <!-- App favicon -->
+     <link rel="shortcut icon" href="{{asset('assets/admin/assets/images/favicon.ico')}}">
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
+     <!-- Vendor css (Require in all Page) -->
+     <link href="{{asset('assets/admin/assets/css/vendor.min.css')}}" rel="stylesheet" type="text/css" />
 
-            <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
+     <!-- Icons css (Require in all Page) -->
+     <link href="{{asset('assets/admin/assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
-        </div>
-    </body>
+     <!-- App css (Require in all Page) -->
+     <link href="{{asset('assets/admin/assets/css/app.min.css')}}" rel="stylesheet" type="text/css" />
+
+     <!-- Theme Config js (Require in all Page) -->
+     <script src="{{asset('assets/admin/assets/js/config.min.js')}}"></script>
+
+</head>
+
+<body class="authentication-bg">
+
+
+    @yield('content')
+
+    
+    <!-- Vendor Javascript (Require in all Page) -->
+    <script src="{{asset('assets/admin/assets/js/vendor.js')}}"></script>
+
+    <!-- App Javascript (Require in all Page) -->
+    <script src="{{asset('assets/admin/assets/js/app.js')}}"></script>
+    
+    
+</body>
+
 </html>

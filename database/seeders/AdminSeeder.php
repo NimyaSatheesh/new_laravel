@@ -4,8 +4,9 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
+use App\Models\User;
+use Spatie\Permission\Models\Role;
+use Hash;
 
 class AdminSeeder extends Seeder
 {
@@ -14,14 +15,14 @@ class AdminSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('admins')->insert([
-          
-             [
-                 'name' =>  'admin',
-                 'email' => 'admin@gmail.com',
-                 'phone' => '9999999991',
-                 'password' => Hash::make('password'),
-             ],
-        ]);
+        $adminUser = User::firstOrCreate(
+            ['email' => 'admin@gmail.com'],
+            [
+                'name' => 'Admin',
+                'password' => Hash::make('password'),
+            ]
+        );
+
+        $adminUser->assignRole('admin'); 
     }
 }

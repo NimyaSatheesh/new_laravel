@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{{url('assets/user/facility.css')}}">
 
-        <title>Hotel Booking</title>
+        <title>Veuz</title>
         {{-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> --}}
         <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
@@ -18,7 +18,7 @@
 
         <!-- Navigation Bar -->
        
-         @include('layouts.navigation')
+         @include('layouts.header')
         <!-- Header -->
         <header class="w3-display-container w3-content" style="max-width:1500px;">
             <div class="w3-display-left w3-padding w3-col l6 m8">

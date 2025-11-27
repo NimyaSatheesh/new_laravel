@@ -1,36 +1,51 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+<html lang="en" data-menu-size="hidden">
 
-        <title>{{ config('app.name', 'Hotel') }}</title>
+<head>
+     <!-- Title Meta -->
+     <meta charset="utf-8" />
+     <title>Veuz | User</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="description" content="A fully responsive premium admin dashboard template" />
+     <meta name="author" content="Techzaa" />
+     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+     <link rel="shortcut icon" href="{{ url('assets/admin/assets/images/favicon.png') }}">
+     <link href="{{ asset('assets/admin/assets/css/vendor.min.css') }}" rel="stylesheet" type="text/css" />
+     <link href="{{ asset('assets/admin/assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
+     <link href="{{ asset('assets/admin/assets/css/app.min.css') }}" rel="stylesheet" type="text/css" />
+     <script src="{{ asset('assets/admin/assets/js/config.min.js') }}"></script>
+</head>
+     
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+<body>
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
+    <!-- START Wrapper -->
+    <div class="wrapper">
+        @include('user.layouts.header')
 
-            <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
+        @include('user.layouts.sidebar')
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
+        <!-- ==================================================== -->
+        <!-- Start right Content here -->
+        <!-- ==================================================== -->
+
+        <div class="page-content">
+
+            @yield('content')
+            @include('user.layouts.footer')
+
         </div>
-    </body>
+    </div>
+    <!-- END Wrapper -->
+
+    <script src="{{ asset('assets/admin/assets/js/vendor.js') }}"></script>
+    <script src="{{ asset('assets/admin/assets/js/app.js') }}"></script>
+    <script src="{{ asset('assets/admin/assets/vendor/jsvectormap/js/jsvectormap.min.js') }}"></script>
+    <script src="{{ asset('assets/admin/assets/vendor/jsvectormap/maps/world-merc.js') }}"></script>
+    <script src="{{ asset('assets/admin/assets/vendor/jsvectormap/maps/world.js') }}"></script>
+    <script src="{{ asset('assets/admin/assets/js/pages/dashboard.js') }}"></script>
+
+
+</body>
+
 </html>
